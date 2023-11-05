@@ -1,0 +1,47 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+    right: 50%;
+    bottom: 50%;
+    transform: translate(50%,50%);
+    position: absolute;
+}
+
+#counter {
+    font-size: 80px;
+}
+
+#value {
+    display: grid;
+    place-items: center;
+    font-size: 100px;
+    padding-bottom: 20px;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#decrease, #reset, #increase {
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    color: black;
+    background-color: white;
+}
+
+#decrease:hover, #reset:hover, #increase:hover {
+    color: white;
+    background-color: black;
+    border: 2px solid white;
+    transition: all 0.5s ease-in-out;
+}
+
+
+
