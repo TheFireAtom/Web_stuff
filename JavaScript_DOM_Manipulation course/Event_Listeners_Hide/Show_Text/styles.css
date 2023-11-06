@@ -1,0 +1,61 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background: linear-gradient(#648880, #293f50);
+}
+
+#main-heading {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    font-size: 50px;
+    margin: 30px;
+    color: white;
+}
+
+.container {
+    padding: 0 50px;
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 10px
+}
+
+.boxes {
+    border: 2px solid white;
+    padding: 50px 50px;
+    border-radius: 15px;
+    color: white;
+}
+
+#heading {
+    font-size: 25px;
+}
+
+button {
+    padding: 10px 2.5px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.reveal-btn.hidden-content {
+    display: block;
+}
+
+.hidden-content {
+    display: none;
+}
