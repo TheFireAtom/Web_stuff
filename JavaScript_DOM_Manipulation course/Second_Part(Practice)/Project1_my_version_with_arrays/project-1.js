@@ -57,6 +57,8 @@ addQuoteButton.addEventListener("click", function () {
     if (userQuote) {
         quotes.push(userQuote);
     }
+
+    window.alert("Done!");
 });
 
 const deleteQuoteButton = document.querySelector("#delete-user-quote");
@@ -74,10 +76,17 @@ deleteQuoteButton.addEventListener("click", function () {
             window.alert("Done!!!");
         }
 
-        // else {
-        //     window.alert("Try again!!!");
-        //     break;
+        // else if ((userPerson != persons[i]) && (userQuote != quotes[i])) {
+        //     continue;
         // }
+
+        else if (userPerson == persons[i] && userQuote != quotes[i]) {
+            window.alert("Please, check if author name and quote that you wrote is correct!!!");
+        }
+
+        else if (userPerson != persons[i] && userQuote == quotes[i]) {
+            window.alert("Please, check if author name and quote that you wrote is correct!!!");
+        }
 
     }
 
