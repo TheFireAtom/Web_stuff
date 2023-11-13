@@ -4,6 +4,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
 }
 
 body {
@@ -47,7 +48,7 @@ body {
     justify-content: space-between;
     align-items: center;
 
-    animation-name: animatemodal;
+    animation-name: null;
     animation-duration: .4s;
 }
 
@@ -62,11 +63,39 @@ body {
 }
 
 #modal-container {
-    /* display: none; */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 1;
+    background-color: rgba(0,0,0, .2);
+}
+
+/* Modal animation */
+
+@keyframes animateModal {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+
+    to {
+        top: 50%;
+        opacity: 1;
+    }
+}
+
+@keyframes animateModalContainer {
+    from {
+        top: 50%;
+        opacity: 1;
+    }
+
+    to {
+        top: -300px;
+        opacity: 0;
+    }
+    
 }
