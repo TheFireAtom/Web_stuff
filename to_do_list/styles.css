@@ -6,4 +6,23 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
+
+body {
+    background: no-repeat url(https://pix4free.org/assets/library/2021-01-19/originals/productivity.jpg) center center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    height: 100vh;
+}
+
+
+
+
