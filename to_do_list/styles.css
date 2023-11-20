@@ -48,8 +48,39 @@ body {
     background-color: #D1D1D1;
     border: 1px solid black;
     border-radius: 10px;
-    padding: 30px;
     font-size: 25px;
+}
+
+/* Items styling */
+
+.section {
+   border-bottom: 1px solid black;
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+.section div {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.section span {
+    position: absolute;
+    right: 4%;
+}
+
+.section span:hover {
+    cursor: pointer;
+    background-color: #6e8231;
+    border-radius: 10px;
+}
+
+.section span:active {
+    
 }
 
 /* Buttons section */
