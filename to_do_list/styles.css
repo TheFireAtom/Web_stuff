@@ -52,39 +52,6 @@ body {
     font-size: 25px;
 }
 
-/* Adjusting checkboxes */
-
-label {
-     margin-right: 75rem;  /* Space between label and checkbox */
-}
-
-.section input[type="checkbox"] {
-    /* display: none; */
-} 
-
-.custom-checkbox {
-    position: inherit;
-    display: inline-block;
-    width: 20px;  
-    height: 20px; 
-    background: white;
-    border: 1px solid #ccc;  
-}  
-
-section input:checked + span:after {
-    content: '✓';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 20px;  /* width of tick mark */
-    height: 20px; /* height of tick mark */
-    background-color: #000; /* color of tick mark */
-
-}
-  
-
-
 /* Buttons section */
 
 .container-buttons {
