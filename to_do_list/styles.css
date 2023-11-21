@@ -79,10 +79,6 @@ body {
     border-radius: 10px;
 }
 
-.section span:active {
-    
-}
-
 /* Buttons section */
 
 .container-buttons {
@@ -106,6 +102,11 @@ button {
     padding: 10px;
 }
 
+/* Class that will be added to closed items */
+
+.closed {
+    display: none;
+}
 
 
 
