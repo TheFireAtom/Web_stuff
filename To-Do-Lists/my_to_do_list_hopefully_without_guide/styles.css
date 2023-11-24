@@ -7,15 +7,19 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Background gradient */
+
 body {
     background: linear-gradient(45deg, #DC2424, #4A569D);
     width: 100%;
     height: 100vh;
 }
 
+/* Container with everything */
+
 .container {
     position: absolute;
-    bottom: 60%;
+    bottom: 50%;
     right: 40%;
     transform: translate(50%, 50%);
     /* display: flex;
@@ -25,7 +29,8 @@ body {
     /* top: 30%; */
     border-radius: 10px;
     transform: scale(1.5);
-    max-width: 700px;
+    height: 300px;
+    padding-bottom: 2rem;
 }
 
 .container .container-header {
@@ -40,7 +45,10 @@ body {
     padding: 10px 130px 10px 10px;
     margin: 10px;
     border-radius: 8px;
+    outline: none;
 }
+
+/* Button styling section (i just stole it lol) */
 
 .container .main-content #add-button {
     align-items: center;
@@ -88,7 +96,37 @@ body {
     transform: translateY(0);
 }
 
-    
+/* Tasks styling (Items styling) */
+
+.container .tasks ul li {
+    list-style-type: none;
+    margin-left: 10px;
+    padding: 5px 0;
+    font-size: 20px;
+}
+
+.container .tasks ul li:hover {
+    cursor: pointer;
+}
+
+
+/* Cross styling */
+
+.container .tasks ul li span {
+    border-radius: 15%;
+    position: absolute;
+    right: 0%;
+    user-select: none;
+}
+
+.container .tasks ul li span:hover {
+    cursor: pointer;
+    background: rgba(209, 0, 0, 0.3);
+}
+
+
+
+
 
 
 
