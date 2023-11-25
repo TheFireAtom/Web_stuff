@@ -27,6 +27,7 @@ function addTask() {
         li.append(span);
     }
     input.value = "";
+    setData();
 }
 
 // Deleting and cross out elements function
@@ -34,13 +35,26 @@ function addTask() {
 tasks.addEventListener("click", function(e) {
     if (e.target.tagName == "LI") {
         e.target.classList.toggle("crossed");
+        setData();
     }
+    
 
     else if (e.target.tagName == "SPAN") {
         e.target.parentElement.classList.add("del");
+        setData();
     }
+    
 }, false);
 
-function saveData() {
-    
+// Functions for saving and getting user data (get/set tasks)
+
+function setData() {
+    localStorage.setItem("data", tasks.innerHTML);
 }
+
+function getData() {
+    tasks.innerHTML = localStorage.getItem("data");
+}
+
+getData();
+localStorage.clear();

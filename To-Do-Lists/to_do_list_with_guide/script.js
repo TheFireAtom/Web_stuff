@@ -42,9 +42,11 @@ listContainer.addEventListener("click", function(e) {
 
 function saveData() {
     localStorage.setItem("data", listContainer.innerHTML);
+    localStorage.removeItem(listContainer.innerText);
 }
 
 function showList() {
     listContainer.innerHTML = localStorage.getItem("data");
 }
 showList();
+saveData();
