@@ -2,34 +2,45 @@
 
 // Constants
 
-const tasks = document.querySelector("#tasks");
+const tasks = document.getElementById("tasks");
 console.log(tasks);
-const input = document.querySelector("#text-input");
+const input = document.getElementById("text-input");
 console.log(input);
-const addBtn = document.querySelector("#add-button");
+const addBtn = document.getElementById("add-button");
 console.log(addBtn);
 
 // Function for adding tasks
 
 function addTask() {
-    let inputText = input.value;
-    let li = document.createElement("li");
-    li.innerText = inputText;
-    let span = document.createElement("span");
-    span.innerText = "❌";
-    li.append(span);
-    tasks.appendChild(li);
 
+    if (input.value === '') {
+        alert("Please, enter your task")
+    }
+
+    else {
+        let li = document.createElement("li");
+        let inputText = input.value;
+        li.innerText = inputText;
+        tasks.appendChild(li);
+        let span = document.createElement("span");
+        span.innerText = "❌";
+        li.append(span);
+    }
+    input.value = "";
 }
 
 // Deleting and cross out elements function
 
 tasks.addEventListener("click", function(e) {
-    if (e.target === "LI") {
-        e.classList.toggle("crossed");
+    if (e.target.tagName == "LI") {
+        e.target.classList.toggle("crossed");
     }
 
-    else if (e.target === "SPAN") {
-        e.parentElement.classList.add("del");
+    else if (e.target.tagName == "SPAN") {
+        e.target.parentElement.classList.add("del");
     }
-});
+}, false);
+
+function saveData() {
+    
+}

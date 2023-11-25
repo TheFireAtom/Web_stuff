@@ -130,12 +130,14 @@ body {
     margin-right: 10px;
 }
 
-.container ul .chosed::before {
-    content: "🟢";
-}
-
 .container ul .crossed {
     text-decoration: line-through;
+}
+
+.container ul .crossed::before {
+    display: inline-block;
+    content: "🟢";
+    
 }
 
 .container ul .del {
