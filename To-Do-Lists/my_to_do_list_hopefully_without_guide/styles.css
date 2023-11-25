@@ -124,6 +124,19 @@ body {
     background: rgba(209, 0, 0, 0.3);
 }
 
+/* Just circle (if element is not crossed) */
+
+.container .tasks ul li::before {
+    content: "⚪";
+    margin-right: 10px;
+}
+
+.container .tasks ul li.chosed::before {
+    content: "🟢";
+}
+
+
+
 
 
 
