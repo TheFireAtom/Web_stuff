@@ -109,7 +109,6 @@ body {
     cursor: pointer;
 }
 
-
 /* Cross styling */
 
 .container ul li span {
@@ -131,11 +130,17 @@ body {
     margin-right: 10px;
 }
 
-.container ul li.chosed::before {
+.container ul .chosed::before {
     content: "🟢";
 }
 
+.container ul .crossed {
+    text-decoration: line-through;
+}
 
+.container ul .del {
+    display: none;
+}
 
 
 

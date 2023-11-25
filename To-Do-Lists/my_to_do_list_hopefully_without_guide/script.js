@@ -22,6 +22,14 @@ function addTask() {
 
 }
 
-// addBtn.addEventListener("click", function(e) {
-//     if (e.currentTarget === "")
-// });
+// Deleting and cross out elements function
+
+tasks.addEventListener("click", function(e) {
+    if (e.target === "LI") {
+        e.classList.toggle("crossed");
+    }
+
+    else if (e.target === "SPAN") {
+        e.parentElement.classList.add("del");
+    }
+});
