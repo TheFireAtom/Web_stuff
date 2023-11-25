@@ -98,40 +98,40 @@ body {
 
 /* Tasks styling (Items styling) */
 
-.container .tasks ul li {
+.container ul li {
     list-style-type: none;
     margin-left: 10px;
     padding: 5px 0;
     font-size: 20px;
 }
 
-.container .tasks ul li:hover {
+.container ul li:hover {
     cursor: pointer;
 }
 
 
 /* Cross styling */
 
-.container .tasks ul li span {
+.container ul li span {
     border-radius: 15%;
     position: absolute;
     right: 0%;
     user-select: none;
 }
 
-.container .tasks ul li span:hover {
+.container ul li span:hover {
     cursor: pointer;
     background: rgba(209, 0, 0, 0.3);
 }
 
 /* Just circle (if element is not crossed) */
 
-.container .tasks ul li::before {
+.container ul li::before {
     content: "⚪";
     margin-right: 10px;
 }
 
-.container .tasks ul li.chosed::before {
+.container ul li.chosed::before {
     content: "🟢";
 }
 
