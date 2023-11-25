@@ -1,0 +1,37 @@
+<!-- Main HTML -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="container-header"><h1>To-Do-List</h1></div>
+        <div class="main-content">
+            <input type="text" id="text-input" placeholder="Write your task">
+            <button id="add-button" role="button" onclick="addTask()">Add</button>
+            <button id="clear-all-button" role="button" onclick="clearAll()">Clear all</button>
+            <button id="clear-white" role="button" onclick="clearWhite()">Clear white</button>
+            <button id="clear-green" role="button" onclick="clearGreen()">Clear green</button>
+        <ul id="tasks">
+
+            <!-- Test elements -->
+
+            <!-- <li class="chosed">Something<span></span></li>
+            <li>Bad<span></span></li>
+            <li>About<span></span></li> -->
+            
+        </ul>
+        </div>
+    </div>
+
+    <!-- Script -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
