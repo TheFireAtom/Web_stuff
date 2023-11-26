@@ -2,8 +2,8 @@
 
 // Constants
 
-const tasks = document.getElementById("tasks");
-console.log(tasks);
+const taskList = document.getElementById("task-list");
+console.log(taskList);
 const input = document.getElementById("text-input");
 console.log(input);
 const addBtn = document.getElementById("add-button");
@@ -21,7 +21,7 @@ function addTask() {
         let li = document.createElement("li");
         let inputText = input.value;
         li.innerText = inputText;
-        tasks.appendChild(li);
+        taskList.appendChild(li);
         let span = document.createElement("span");
         span.innerText = "❌";
         li.append(span);
@@ -35,8 +35,8 @@ function addTask() {
 function clearAll() {
     let yes = confirm("Are you sure? All tasks will be deleted!!!");
     if (yes === true) {
-        tasks.textContent = '';
-        deleteData();
+        taskList.textContent = '';
+        // deleteData();
     }
 }
 
@@ -44,16 +44,18 @@ function clearAll() {
 
 function clearGreen() {
     let yes = confirm("Are you sure? All done tasks will be deleted!!!");
-    let childList = tasks.querySelector(".crossed");
+    let childList = taskList.querySelectorAll(".crossed");
     if (yes === true) {
-        childList.innerHTML = '';
+        childList.forEach((child) => (child.classList.add("del")));
+        setData();
+        console.log(childList);
     }
 }
 
 
 // Deleting and cross out elements function
 
-tasks.addEventListener("click", function(e) {
+taskList.addEventListener("click", function(e) {
     if (e.target.tagName == "LI") {
         e.target.classList.toggle("crossed");
         setData();
@@ -70,15 +72,15 @@ tasks.addEventListener("click", function(e) {
 // Functions for saving and getting user data (get/set tasks)
 
 function setData() {
-    localStorage.setItem("data", tasks.innerHTML);
+    localStorage.setItem("data", taskList.innerHTML);
 }
 
 function getData() {
-    tasks.innerHTML = localStorage.getItem("data");
+    taskList.innerHTML = localStorage.getItem("data");
 }
 
-function deleteData() {
-    localStorage.clear();
-}
+// function deleteData() {
+//     localStorage.clear();
+// }
 
 getData();
