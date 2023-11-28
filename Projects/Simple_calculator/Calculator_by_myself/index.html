@@ -10,37 +10,39 @@
     <div class="container">
         <div class="calculator">
             <div class="display">
-                <input type="text" name="display" id="display">
+                <input type="text" name="display" id="display" placeholder="">
             </div>
-            <form class="line">
-                <input type="button" value="AC" name="AC">
-                <input type="button" value="DE" name="DE">
-                <input type="button" value="." name=".">
-                <input type="button" value="/" name="/">
-            </form>
-            <form class="line">
-                <input type="button" value="7" name="7">
-                <input type="button" value="8" name="8">
-                <input type="button" value="9" name="9">
-                <input type="button" value="*" name="*">
-            </form>
-            <form class="line">
-                <input type="button" value="4" name="4">
-                <input type="button" value="5" name="5">
-                <input type="button" value="6" name="6">
-                <input type="button" value="+" name="+">
-            </form>
-            <form class="line">
-                <input type="button" value="1" name="1">
-                <input type="button" value="2" name="2">
-                <input type="button" value="3" name="3">
-                <input type="button" value="-" name="-">
-            </form>
-            <form class="line">
-                <input type="button" value="00" name="00">
-                <input type="button" value="0" name="0">
-                <input type="button" value="=" name="=" id="equals">
-            </form>
+            <div id="input-window">
+                <form class="line">
+                    <input type="button" value="AC" name="AC" class="operator" onclick="display.value = ''">
+                    <input type="button" value="DE" name="DE" class="operator" onclick="display.value = display.value.toString().slice(0, -1)">
+                    <input type="button" value="." name="." class="operator" onclick="display.value += '.'"> 
+                    <input type="button" value="/" name="/" class="operator" onclick="display.value += '/'"> 
+                </form>
+                <form class="line">
+                    <input type="button" value="7" name="7" onclick="display.value += '7'">
+                    <input type="button" value="8" name="8" onclick="display.value += '8'">
+                    <input type="button" value="9" name="9" onclick="display.value += '9'">
+                    <input type="button" value="*" name="*" class="operator" onclick="display.value += '*'">
+                </form>
+                <form class="line">
+                    <input type="button" value="4" name="4" onclick="display.value += '4'">
+                    <input type="button" value="5" name="5" onclick="display.value += '5'">
+                    <input type="button" value="6" name="6" onclick="display.value += '6'">
+                    <input type="button" value="+" name="+" class="operator" onclick="display.value += '+'">
+                </form>
+                <form class="line">
+                    <input type="button" value="1" name="1" onclick="display.value += '1'">
+                    <input type="button" value="2" name="2" onclick="display.value += '2'">
+                    <input type="button" value="3" name="3" onclick="display.value += '3'">
+                    <input type="button" value="-" name="-" class="operator" onclick="display.value += '-'">
+                </form>
+                <form class="line">
+                    <input type="button" value="00" name="00" onclick="display.value += '00'">
+                    <input type="button" value="0" name="0" onclick="display.value += '0'">
+                    <input type="button" value="=" name="=" id="equals" class="operator" onclick="display.value = eval(display.value)">
+                </form>
+            </div>
         </div>
     </div>
 </body>
