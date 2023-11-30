@@ -20,16 +20,17 @@ const innerFoodColor = "#830C24";
 const outerFoodColor = "#000000";
 // Snake constant (here i use an array of objects to draw a snake)
 const snake = [
-    {x:unitSize * 5, y:unitSize},
-    {x:unitSize * 4, y:unitSize},
-    {x:unitSize * 3, y:unitSize},
-    {x:unitSize * 2, y:unitSize},
-    {x:unitSize, y:unitSize}
+    {x:unitSize * 4, y:0},
+    {x:unitSize * 3, y:0},
+    {x:unitSize * 2, y:0},
+    {x:unitSize, y:0},
+    {x:0, y:0}
 ];
 // Boolean for gameOver 
 let running = true;
 
 drawFood();
+drawSnake();
 
 // Functions
 function drawFood() {
@@ -37,15 +38,22 @@ function drawFood() {
         let randomNumber = (Math.round((Math.random() * (max - min) + min) / unitSize) * unitSize);
         return randomNumber;
     };
-    // Inner food placing
+    // let variable for food placing (inner rectangle and outer rectangle are two different objects)
     let tempFoodLocation = placeInnerFood(0, canvasWidth);
+    // Inner food placing
     context.fillStyle = innerFoodColor;
     let innerRect = context.fillRect(tempFoodLocation, tempFoodLocation, unitSize, unitSize);
+    // Outer food placing
     context.strokeStyle = outerFoodColor;
     let outerRect = context.strokeRect(tempFoodLocation, tempFoodLocation, unitSize, unitSize);
-
-    // context.fillRect(placeinnerFood(0, canvasWidth), placeinnerFood(0, canvasHeight), unitSize, unitSize);
-    // Outer food (border) placing
-    // context.fillStyle = outerFoodColor;
-    // context.strokeRect(placeinnerFood(0, canvasWidth), placeinnerFood(0, canvasHeight), unitSize, unitSize);
 };
+function drawSnake() {
+    for (let i = 0; i < snake.length; i++) {
+        context.fillRect(snake[i].x, snake[i].y, unitSize, unitSize);
+        context.strokeRect(snake[i].x, snake[i].y, unitSize, unitSize);
+    }
+};
+function tickDelay() {
+
+};
+
