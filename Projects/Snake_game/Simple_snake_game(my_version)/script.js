@@ -14,25 +14,29 @@ const canvasHeight = canvas.offsetHeight - 10;
 const xVelocity = unitSize;
 const yVelocity = 0;
 // Color constants
-const innerSnakeColor = "#F05941";
+const innerSnakeColor = "#228B22";
 const outerSnakeColor = "#000000"
-const innerFoodColor = "#830C24";
+const innerFoodColor = "#DC143C";
 const outerFoodColor = "#000000";
 // Snake constant (here i use an array of objects to draw a snake)
 const snake = [
-    {x:unitSize * 4, y:0},
-    {x:unitSize * 3, y:0},
-    {x:unitSize * 2, y:0},
-    {x:unitSize, y:0},
-    {x:0, y:0}
+    {x:0, y:0},
+    {x:xVelocity, y:0},
+    {x:xVelocity * 2, y:0},
+    {x:xVelocity * 3, y:0},
+    {x:xVelocity * 4, y:0}
 ];
 // Boolean for gameOver 
 let running = true;
+let velocityUpdate = 5;
+// Functions call
 
 drawFood();
 drawSnake();
+tickDelay();
 
 // Functions
+
 function drawFood() {
     function placeInnerFood(min, max) {
         let randomNumber = (Math.round((Math.random() * (max - min) + min) / unitSize) * unitSize);
@@ -40,20 +44,44 @@ function drawFood() {
     };
     // let variable for food placing (inner rectangle and outer rectangle are two different objects)
     let tempFoodLocation = placeInnerFood(0, canvasWidth);
-    // Inner food placing
-    context.fillStyle = innerFoodColor;
-    let innerRect = context.fillRect(tempFoodLocation, tempFoodLocation, unitSize, unitSize);
     // Outer food placing
     context.strokeStyle = outerFoodColor;
-    let outerRect = context.strokeRect(tempFoodLocation, tempFoodLocation, unitSize, unitSize);
+    context.strokeRect(tempFoodLocation, tempFoodLocation, unitSize, unitSize);
+    // Inner food placing
+    context.fillStyle = innerFoodColor;
+    context.fillRect(tempFoodLocation, tempFoodLocation, unitSize, unitSize);
 };
+
 function drawSnake() {
     for (let i = 0; i < snake.length; i++) {
-        context.fillRect(snake[i].x, snake[i].y, unitSize, unitSize);
+        context.fillStyle = innerSnakeColor;
         context.strokeRect(snake[i].x, snake[i].y, unitSize, unitSize);
+        context.fillRect(snake[i].x, snake[i].y, unitSize, unitSize);
+    }
+    moveSnake();
+};
+
+function moveSnake() {
+    snake.push({x:xVelocity * velocityUpdate, y:0});
+    removeTail();
+    snake.shift();
+    velocityUpdate++;
+    console.log(snake);
+};
+
+function removeTail() {
+    context.clearRect(snake[0].x, snake[0].y, unitSize, unitSize);
+    context.clearRect(snake[0].x, snake[0].y, unitSize, unitSize);
+};
+
+function resetGame() {
+    running = false;
+    if (running == false) {
+        // gameOver();
     }
 };
-function tickDelay() {
 
+function tickDelay() {
+    // window.setInterval(drawSnake, 75);
 };
 
