@@ -57,7 +57,7 @@ function clearBoard() {
 };
 function createFood() {
     function randomFood(min, max) {
-        const randNum = Math.round((Math.random() * (max - min) + min) / unitSize) * unitSize ;
+        const randNum = Math.round((Math.random() * (max - min) + min) / unitSize) * unitSize;
         console.log(randNum);
         return randNum;
     }
