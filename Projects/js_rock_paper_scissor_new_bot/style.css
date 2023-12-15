@@ -1,0 +1,55 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Kalnia', serif;
+    font-family: 'Manrope', sans-serif;
+}
+
+body {
+    background: linear-gradient(270deg, #A53860, #003566);
+    height: 100vh; 
+}
+
+#header, #choise {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    color: black;
+}
+
+#header {
+    font-size: 50px;
+    top: 5%;
+}
+
+#choise {
+    font-size: 40px;
+    top: 10%;
+}
+
+.emoji  {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 25vh;
+    user-select: none;
+    cursor: pointer;
+}
+
+span {
+    font-size: 300px;
+}
+
+span:hover {
+    font-size: 350px;
+    transition: all 0.5s ease;
+}
+
+span:not(:hover) {
+    font-size: 300px;
+    transition: all 0.5s ease;
+}
+
+
+
